@@ -79,3 +79,16 @@ int main() {
 	}
 	cout << "모든 원소의 합: " << sum << endl;
 }
+
+//정수형 변수 a의 주소를 포인터 p에 저장하고,
+//포인터를 이용해 a의 값을 출력하는 프로그램을 작성하시오.
+
+//예: (변수 a의 값은 10)
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a = 10;          // 정수형 변수 a 선언 및 초기화
+	int* p = &a;       // 변수 a의 주소를 포인터 p에 저장
+	cout << "The value of a is: " << *p << endl; // 포인터를 이용해 a의 값 출력
+	return 0;
