@@ -92,3 +92,4 @@ int main() {
 	int* p = &a;       // 변수 a의 주소를 포인터 p에 저장
 	cout << "The value of a is: " << *p << endl; // 포인터를 이용해 a의 값 출력
 	return 0;
+}
