@@ -93,3 +93,20 @@ int main() {
 	cout << "The value of a is: " << *p << endl; // 포인터를 이용해 a의 값 출력
 	return 0;
 }
+
+//정수형 변수 a와 이를 참조하는 변수 b를 선언하고,
+//b를 이용해 값을 변경하면 a의 값도 바뀌는 프로그램을 작성하시오.
+
+//예: a = 10; b = a; b = 20; → 출력 결과 : a = 20
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a = 10;      // 정수형 변수 a 선언 및 초기화
+	int& b = a;     // a를 참조하는 변수 b 선언
+	cout << "초기값: a = " << a << ", b = " << b << endl;
+	b = 20;         // b를 이용해 값을 변경
+	cout << "변경 후: a = " << a << ", b = " << b << endl;
+	return 0;
+}
