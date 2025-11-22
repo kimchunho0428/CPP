@@ -1,16 +1,27 @@
-//알고리즘 헤더에 들어있는 함수 revrese, count, max_element, min_element, unique, remove 등을 알아보는 코드
+//알고리즘 헤더에 들어있는 함수 revrese, count, max_element, min_element, unique, remove, find 등을 알아보는 코드
 #include <iostream> // 입출력 스트림
 #include <algorithm> // 알고리즘 헤더 (reverse, count, max_element, min_element, unique, remove 등 포함)
 #include <vector> // 벡터 컨테이너
 using namespace std; // 표준 네임스페이스 사용
 
-// 벡터 출력 템플릿 함수
+// 벡터 출력 템플릿 함수 <- 벡터의 모든 원소를 출력
 template<typename T>
 void printVector(const vector<T>& vec) {
 	for (const T& i : vec) {
 		cout << i << " ";
 	}
 	cout << endl;
+}
+
+// find 템플릿 함수 <- 벡터에서 특정 값을 찾음
+template<typename T>
+void findInVector(const vector<T>& vec, const T& value) {
+	auto it = find(vec.begin(), vec.end(), value); // 사용법: find(시작 이터레이터, 끝 이터레이터, 찾을 값)
+	if (it != vec.end()) { // 찾은 값이 벡터에 존재하는지 확인
+		cout << "Found " << value << " at position: " << distance(vec.begin(), it) << endl; // distance는 두 이터레이터 사이의 거리를 반환
+	} else {
+		cout << value << " not found in the vector." << endl; // 값이 벡터에 존재하지 않을 때
+	}
 }
 
 int main() {
@@ -54,6 +65,9 @@ int main() {
 	                                  // 삭제하는 이유는 remove 함수가 실제로 원소를 삭제하지 않고, 제거된 후의 새로운 끝 위치를 반환하기 때문
 	cout << "After removing 2: ";
 	printVector(vec);
+
+	findInVector(vec, 5); // 템플릿 함수 사용 예제
+	findInVector(vec, 2); // 템플릿 함수 사용 예제
 
 	return 0;
 }
